@@ -1,0 +1,236 @@
+/* RESET DAN DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+ul {
+    list-style: none;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* HEADER DAN NAVIGASI */
+.main-header {
+    background: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li a {
+    color: #fff;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+
+.hamburger-menu {
+    display: none; /* Sembunyikan secara default untuk desktop */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?education,school,teacher') no-repeat center center/cover;
+    color: #fff;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #ffc107;
+    color: #333;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e0a800;
+}
+
+/* MESSAGE SECTION (UCAPAN) */
+.message-section {
+    background-color: #fff;
+}
+
+.message-card {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.message-card h3 {
+    color: #dc3545; /* Warna Merah atau yang lain */
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    border-bottom: 2px solid #dc3545;
+    padding-bottom: 10px;
+}
+
+.message-card p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.message-card .signature {
+    text-align: right;
+    font-style: italic;
+    font-weight: 600;
+    margin-top: 30px;
+    color: #6c757d;
+}
+
+/* GALLERY SECTION */
+.gallery-section {
+    background-color: #f8f9fa;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px; /* Tinggi seragam untuk tampilan grid yang rapi */
+    object-fit: cover;
+    display: block;
+}
+
+/* FOOTER */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* RESPONSIF: MEDIA QUERIES */
+@media (max-width: 768px) {
+    /* NAVIGATION: Sembunyikan tautan, tampilkan hamburger */
+    .main-nav {
+        /* Saat navigasi tersembunyi */
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Di bawah header */
+        left: 0;
+        background: #007bff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-nav.active {
+        display: block; /* Tampilkan saat JS menambahkan kelas 'active' */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        text-align: left;
+    }
+
+    .nav-links li a {
+        padding: 15px 30px;
+        border-bottom: 1px solid #0056b3;
+    }
+    
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* HERO SECTION */
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    /* GALLERY GRID */
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Satu kolom di perangkat kecil */
+    }
+
+    .gallery-item img {
+        height: auto; /* Biarkan tinggi menyesuaikan agar gambar tidak terpotong */
+    }
+}
